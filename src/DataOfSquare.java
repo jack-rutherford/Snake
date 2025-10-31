@@ -1,19 +1,19 @@
-import java.util.ArrayList;
 import java.awt.Color;
+import java.util.ArrayList;
 
 public class DataOfSquare {
 
 	
 	//ArrayList that'll contain the colors
-	ArrayList<Color> C =new ArrayList<Color>();
+	ArrayList<Color> C =new ArrayList<>();
 	int color; //2: snake , 1: food, 0:empty 
 	SquarePanel square;
 	public DataOfSquare(int col){
 		
 		//Lets add the color to the arrayList
-		C.add(Color.darkGray);//0
-		C.add(Color.BLUE);    //1
-		C.add(Color.white);   //2
+		C.add(Constants.COLOR_EMPTY);//0
+		C.add(Constants.COLOR_FOOD);    //1
+		C.add(Constants.COLOR_SNAKE);   //2
 		color=col;
 		square = new SquarePanel(C.get(color));
 	}
