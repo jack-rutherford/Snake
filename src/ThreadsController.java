@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import javax.swing.JFrame;
 
 //Controls all the game logic .. most important class in this project.
 public class ThreadsController extends Thread {
@@ -57,7 +58,6 @@ public class ThreadsController extends Thread {
             boolean biteItself = posCritique.getX() == positions.get(i).getX() && posCritique.getY() == positions.get(i).getY();
             if (biteItself) {
                 stopTheGame();
-                System.out.println("Snake length was: " + sizeSnake);
             }
         }
 
@@ -73,9 +73,22 @@ public class ThreadsController extends Thread {
 
     //Stops The Game
     private void stopTheGame() {
-        System.out.println("COLISION! \n");
-        while (true) {
-            pauser();
+        System.out.println("COLLISION! \n");
+
+        // JFrame popup that says Game Over and shows the length of the snake, with a custom "Quit" button
+        JFrame frame = new JFrame("Game Over");
+        int choice = javax.swing.JOptionPane.showOptionDialog(
+            frame,
+            "Game Over! \n Your snake length was: " + sizeSnake,
+            "Game Over",
+            javax.swing.JOptionPane.DEFAULT_OPTION,
+            javax.swing.JOptionPane.INFORMATION_MESSAGE,
+            null,
+            new Object[]{"Quit"},
+            "Quit"
+        );
+        if (choice == 0) {
+            System.exit(0);
         }
     }
 
