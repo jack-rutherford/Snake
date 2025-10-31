@@ -57,6 +57,7 @@ public class ThreadsController extends Thread {
             boolean biteItself = posCritique.getX() == positions.get(i).getX() && posCritique.getY() == positions.get(i).getY();
             if (biteItself) {
                 stopTheGame();
+                System.out.println("Snake length was: " + sizeSnake);
             }
         }
 
