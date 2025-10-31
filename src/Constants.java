@@ -8,7 +8,7 @@ public record Constants() {
     public static final int SNAKE_INITIAL_LENGTH = 5;
     public static final int SNAKE_INITIAL_SPEED = 50; // in milliseconds
 
-    public static final Color COLOR_SNAKE = Color.GREEN;
+    public static final Color COLOR_SNAKE = Color.WHITE;
     public static final Color COLOR_FOOD = Color.BLUE;
     public static final Color COLOR_EMPTY = Color.DARK_GRAY;
 }
